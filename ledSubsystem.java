@@ -36,15 +36,8 @@ public class ledSubsystem {
                     this.color = color;
                 }
             }
-            public void twoColorsBlink2(String color1, String color2){
-                cycleCount++;
-                if (cycleCount %2 == 0){
-                    if (cycleCount %6 == 0)
-                }
-            }
-            private int cycleCount = 0;
              private int blinkRate = 2; 
-
+            private int cycleCount1 = 0;
     public void twoColorsBlinkVariableRate(String color1, String color2) {
         cycleCount++;
 
@@ -56,7 +49,7 @@ public class ledSubsystem {
             }
         }
 
-        if (cycleCount % 6 == 0) {
+        if (cycleCount1 % 6 == 0) {
             blinkRate = (blinkRate == 2) ? 4 : 2;
         }
     }
