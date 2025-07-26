@@ -1,14 +1,18 @@
-import java.util.Scanner;
-
 public class elevatorSubsystem {
-    public static void main(string[] args){
-    Scanner scanner = new Scanner(system.in);
- double maxSpeed = 0.85; //m/s
- double maxHeight = 0.6 //m
-    }
- public static double power (){
-    System.out.print("enter power rate between 1 to -1");
-    double power = scanner.nextouble();
-    return power;
- }
+protected double MAX_SPEED=0.85 ;
+protected double MAX_HEIGHT = 0.6;
+protected double speed;
+protected double position = 0.0;
+
+protected double setspeed(double power){
+speed = power*MAX_SPEED;
+return speed;
+}
+
+protected double setposition(double currectspeed, double currectposition){
+    double distance = currectspeed*0.02;
+    position = currectposition+distance ;
+    return position;
+}
+
 }
