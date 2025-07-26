@@ -36,6 +36,12 @@ public class ledSubsystem {
                     this.color = color;
                 }
             }
+            public void twoColorsBlink2(String color1, String color2){
+                cycleCount++;
+                if (cycleCount %2 == 0){
+                    if (cycleCount %6 == 0)
+                }
+            }
         }
     
 
