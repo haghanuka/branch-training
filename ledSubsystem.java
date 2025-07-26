@@ -18,7 +18,7 @@ public class ledSubsystem {
             return this.color;
         }
     
-        public void updateBlink(String color1, String color2) {
+        public void twoColorsBlink(String color1, String color2) {
             cycleCount++;
             if (cycleCount % 3 == 0) {
                 if (this.color.equals(color1)) {
@@ -27,7 +27,15 @@ public class ledSubsystem {
                     this.color = color1;
                 }
             }
-        }
     }
-
+            
+        public void oneColorBlink(String color) {
+                if (this.color.equals(color)) {
+                    this.color = "";
+                } else {
+                    this.color = color;
+                }
+            }
+        }
+    
 
