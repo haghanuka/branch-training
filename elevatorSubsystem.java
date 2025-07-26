@@ -13,10 +13,10 @@ protected double positionupdate(double currectspeed, double currectposition){
     double distance = currectspeed*0.02; //מרחק=מהירות*זמן
     position = currectposition+distance ;
     if (position>currectposition){
-        super.oneColorblink("red")
+        super.oneColorblink("red");
     }
     else if (position<currectposition){
-        super.oneColorblink("green")
+        super.oneColorblink("green");
     }
     return position;
 }
