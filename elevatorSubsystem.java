@@ -1,4 +1,4 @@
-public class elevatorSubsystem {
+public class elevatorSubsystem extends ledSubsystem  {
 protected double MAX_SPEED=0.85 ;
 protected double MAX_HEIGHT = 0.6;
 protected double speed;
@@ -12,17 +12,29 @@ return speed;
 protected double positionupdate(double currectspeed, double currectposition){
     double distance = currectspeed*0.02;
     position = currectposition+distance ;
+    if (position>currectposition){
+        super.setColor("green");
+    }
+    else if (position<currectposition){
+        super.setColor("red");
+    }
     return position;
 }
 
 protected boolean isup(double currectposition){
     boolean isup = currectposition>=MAX_HEIGHT;
-    position = 0.6;
+    if (isup){
+        position = 0.6;
+        super.setColor("blue");
+    }
     return isup;
 }
 protected boolean isdown(double currectposition){
     boolean isdown = currectposition<=MAX_HEIGHT;
+    if (isdown){
     position = 0.0;
+    super.setColor("white");
+}
     return isdown;
 }
 }
