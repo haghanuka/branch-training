@@ -11,12 +11,12 @@ public class elevatorSubsystem extends ledSubsystem  {
     
     protected double positionupdate(double currectspeed, double currectposition){
         double distance = currectspeed*0.02; //מרחק=מהירות*זמן
-        position = currectposition+distance ;
+        position = currectposition+distance;
         if (position>currectposition){
-            super.oneColorblink("red");
+            oneColorBlink("red");
         }
         else if (position<currectposition){
-            super.oneColorblink("green");
+            oneColorBlink("green");
         }
         return position;
     }
