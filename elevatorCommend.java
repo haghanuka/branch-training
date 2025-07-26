@@ -15,7 +15,6 @@ public void elevatorGoUp () {
 
 public void elevatorGoDownWithLED() {
     elevatorSubsystem.setspeed(-0.6);
-
     boolean ledState = false; // LED state: false = off, true = on
     while (elevatorSubsystem.position > 0.0) {
         ledState = !ledState; // Toggle LED state
