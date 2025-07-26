@@ -15,12 +15,41 @@ public void elevatorGoUp () {
 
 public void elevatorGoDownWithLED() {
     elevatorSubsystem.setspeed(-0.6);
-    boolean ledState = false; // LED state: false = off, true = on
+    boolean ledState = false; 
     while (elevatorSubsystem.position > 0.0) {
-        ledState = !ledState; // Toggle LED state
+        ledState = !ledState; 
         elevatorSubsystem.positionupdate(elevatorSubsystem.speed, elevatorSubsystem.position);
         System.out.println("the LED color is: " + ledSubsystem.getColor());
     }
+}
+
+public void elevatordownorup() {
+    if (elevatorSubsystem.isup(elevatorSubsystem.position)) {
+        for (int i = 0 ; i<50; i++) {
+        elevatorSubsystem.setspeed(0);}
+        elevatorSubsystem.setspeed(0);
+    } else if (elevatorSubsystem.isdown(elevatorSubsystem.position)) {
+        System.out.println("the elevator is down");
+    } else {
+        System.out.println("the elevator is in the middle");
+    }
+}
+
+public void elevatorSequence() {
+    System.out.println("Waiting for 1 second...");
+    int cyclesForOneSecond = (int) (1 / 0.02); 
+    for (int i = 0; i < cyclesForOneSecond; i++) {
+
+    }
+    System.out.println("Raising the elevator...");
+    elevatorGoUp();
+    System.out.println("Waiting for 2 seconds...");
+    int cyclesForTwoSeconds = (int) (2 / 0.02); 
+    for (int i = 0; i < cyclesForTwoSeconds; i++) {
+
+    }
+    System.out.println("Lowering the elevator...");
+    elevatorGoDownWithLED();
 }
 
 public static void main (String[] args) {
